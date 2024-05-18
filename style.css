@@ -3,19 +3,55 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Roboto", sans-serif;
+  color: var(--font-color);
 }
+
 :root {
   --font-color: #323238;
   --bg-conteiner: #fff;
   --bg-selected-soundButton: #02799d;
 }
+
+.flex {
+  display: flex
+}
+
 .container {
   display: grid;
   height: 100vh;
   place-content: center;
 }
-#timer{
-    
+
+.content{
+  gap: 192px;
+}
+#timer, #controls button{
+  color: var(--font-color);
+}
+
+#timer {  
+  flex-direction: column;
+}
+#clock{
+  font-size: 126px;
+  font-weight: 500;
+  line-height: 100px;
+  justify-content: center;
+}
+#controls{
+  margin-top: 17px;
+  justify-content: space-between;
+}
+#controls button{
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 48px;
+}
+#sounds{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
