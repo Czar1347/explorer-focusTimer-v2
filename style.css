@@ -27,6 +27,7 @@ body {
 
 .content{
   gap: 192px;
+  align-items: center;
 }
 #timer, #controls button{
   color: var(--font-color);
@@ -54,4 +55,13 @@ body {
 #sounds{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+#sounds button{
+  width: 138px;
+  height: 152px;
+  border-radius: 24px;
+  border: none;
+  background: #E1E1E6;
+  font-size: 46px;
 }
