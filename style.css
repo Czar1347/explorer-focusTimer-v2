@@ -57,11 +57,26 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
 }
+
 #sounds button{
   width: 138px;
   height: 152px;
   border-radius: 24px;
   border: none;
   background: #E1E1E6;
-  font-size: 46px;
+  font-size: 62px;
+}
+
+
+/* controls */
+
+.running .ph-play-circle,
+html:not(.running) .ph-pause-circle,
+html:not(.running) .ph-stop-circle{
+  display: none;
+}
+
+#sounds .selected{
+  background: var(--bg-selected-soundButton);
+  color: #fff;
 }
