@@ -1,11 +1,13 @@
 import { sounds } from "./elements.js";
+import state from "./state.js";
 
 // Actions of controls
 export function toogleRunning() {
-  console.log("toogleRunning");
+  state.isRunnig = document.documentElement.classList.toggle("running");
 }
 export function reset() {
-  console.log("reset");
+  state.isRunnig = false;
+  document.documentElement.classList.remove("running");
 }
 export function add() {
   console.log("add");
@@ -27,7 +29,6 @@ export function storefront() {
 export function fire() {
   console.log("fire");
 }
-
 export function selectionSound(sound) {
   const isSelected = sound.classList.contains("selected");
   sounds.forEach((audio) => {
