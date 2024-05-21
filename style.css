@@ -65,6 +65,7 @@ body {
   border: none;
   background: #E1E1E6;
   font-size: 62px;
+  transition: background 0.25s;
 }
 
 

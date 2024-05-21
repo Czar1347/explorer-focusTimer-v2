@@ -6,6 +6,6 @@ export function start(minutes, seconds) {
   state.seconds = seconds;
 
   events.registeControls();
-
+  events.registerAudios();
 
 }
