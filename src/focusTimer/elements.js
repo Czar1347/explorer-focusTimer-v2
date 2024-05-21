@@ -1,4 +1,1 @@
-export const sounds = document.querySelectorAll('#sounds .ph')
-
-
-
+export const timerControls = document.getElementById('controls')
