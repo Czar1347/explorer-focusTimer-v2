@@ -1,12 +1,15 @@
 import { sounds } from "./elements.js";
 import state from "./state.js";
+import * as timer from './timer.js'
 
 // Actions of controls
 export function toogleRunning() {
-  state.isRunnig = document.documentElement.classList.toggle("running");
+  state.isRunning = document.documentElement.classList.toggle("running");
+  timer.countdown()
+
 }
 export function reset() {
-  state.isRunnig = false;
+  state.isRunning = false;
   document.documentElement.classList.remove("running");
 }
 export function add() {
