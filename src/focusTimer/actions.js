@@ -11,6 +11,7 @@ export function toogleRunning() {
 export function reset() {
   state.isRunning = false;
   document.documentElement.classList.remove("running");
+  timer.updateDisplay()
 }
 export function add() {
   console.log("add");

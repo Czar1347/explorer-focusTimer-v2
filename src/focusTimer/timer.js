@@ -1,13 +1,31 @@
 import state from "./state.js";
 import * as elements from './elements.js'
+import { reset } from "./actions.js";
 
 export function countdown(){
+    clearTimeout(state.idCountdown)
+
     if(!state.isRunning){
         return
     }
 
-    console.log('teste')
-    setInterval(()=>countdown(), 1000)
+    let seconds = Number(elements.seconds.textContent)
+    let minutes = Number(elements.minutes.textContent)
+    seconds--
+    
+    if(seconds < 0){
+        seconds = 59
+        minutes--
+    }
+
+    if(minutes < 0){
+        reset()
+        return
+    }
+
+    updateDisplay(minutes, seconds)
+
+   state.idCountdown = setTimeout(()=>countdown(), 1000)
 }
 
 export function updateDisplay(minutes, seconds){
