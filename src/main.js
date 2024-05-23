@@ -1,3 +1,3 @@
 import { start } from "./focusTimer/index.js";
 
-start(0, 3)
+start(25,0)

@@ -2,15 +2,19 @@ import state from "./state.js";
 import * as elements from './elements.js'
 import { reset } from "./actions.js";
 
-export function countdown(){
+
+export function countdown(minutes){
     clearTimeout(state.idCountdown)
+
+    minutes = minutes ?? Number(elements.minutes.textContent)
 
     if(!state.isRunning){
         return
     }
 
     let seconds = Number(elements.seconds.textContent)
-    let minutes = Number(elements.minutes.textContent)
+    
+
     seconds--
     
     if(seconds < 0){
