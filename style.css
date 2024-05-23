@@ -72,10 +72,13 @@ body {
 /* controls */
 
 .running .ph-play-circle,
-html:not(.running) .ph-pause-circle{
+html:not(.running) .ph-pause-circle
+{
   display: none;
 }
-
+html:not(.running) .ph-stop-circle{
+  visibility: hidden;
+}
 #sounds .selected{
   background: var(--bg-selected-soundButton);
   color: #fff;

@@ -14,30 +14,33 @@ export function toogleRunning() {
 export function reset() {
   state.isRunning = false;
   document.documentElement.classList.remove("running");
-  console.log(state.minutes)
+  console.log(state.minutes);
   timer.updateDisplay();
 }
 export function add() {
-  state.minutes += 5;
-  if(state.minutes > 60){
-    return
+  if (state.minutes < 60) {
+    state.minutes += 5;
+  } else {
+    return;
   }
   if (state.isRunning) {
     timer.countdown(state.minutes);
   } else {
-    timer.updateDisplay(state.minutes,0)
+    timer.updateDisplay(state.minutes, 0);
   }
 }
 export function remove() {
-  state.minutes -= 5;
-  if(state.minutes < 0){
-    return
+  if (state.minutes > 5) {
+    state.minutes -= 5;
+  } else{
+    return;
   }
   if (state.isRunning) {
     timer.countdown(state.minutes);
   } else {
-    timer.updateDisplay(state.minutes,0)
+    timer.updateDisplay(state.minutes, 0);
   }
+
 }
 
 //actions of sounds controls
