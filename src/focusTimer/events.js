@@ -1,4 +1,4 @@
-import {timerControls, sounds}from './elements.js'
+import {timerControls, soundsControls}from './elements.js'
 import * as actions from './actions.js'
 
 export function registeControls(){
@@ -12,12 +12,10 @@ export function registeControls(){
 }
 
 export function registerAudios() {
-sounds.forEach(sound => {
+soundsControls.forEach(sound => {
     sound.addEventListener('click', event=>{
         const audio = event.target.dataset.sound
-        
-        actions[audio]()
-        actions.selectionSound(sound)
+        actions.selectionSound(sound, audio)
     })
 })
     

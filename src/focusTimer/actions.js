@@ -1,17 +1,17 @@
-import { sounds } from "./elements.js";
+import { soundsControls } from "./elements.js";
 import state from "./state.js";
-import * as timer from './timer.js'
+import * as timer from "./timer.js";
+import * as audios from "./sounds.js";
 
 // Actions of controls
 export function toogleRunning() {
   state.isRunning = document.documentElement.classList.toggle("running");
-  timer.countdown()
-
+  timer.countdown();
 }
 export function reset() {
   state.isRunning = false;
   document.documentElement.classList.remove("running");
-  timer.updateDisplay()
+  timer.updateDisplay();
 }
 export function add() {
   console.log("add");
@@ -21,24 +21,16 @@ export function remove() {
 }
 
 //actions of sounds
-export function tree() {
-  console.log("tree");
-}
-export function snow() {
-  console.log("snow");
-}
-export function storefront() {
-  console.log("storefront");
-}
-export function fire() {
-  console.log("fire");
-}
-export function selectionSound(sound) {
+
+export function selectionSound(sound, backgroundSound) {
   const isSelected = sound.classList.contains("selected");
-  sounds.forEach((audio) => {
+  soundsControls.forEach((audio) => {
     audio.classList.remove("selected");
+    const song = audio.dataset.sound;
+    audios[song].pause()
   });
   if (!isSelected) {
     sound.classList.add("selected");
+    audios[backgroundSound].play()
   }
 }
